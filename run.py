@@ -11,7 +11,7 @@ app = typer.Typer()
 def run(
 # Include flags here 
     save_dir: Path = Path('outputs/'),
-    enable_checkpoints: bool = True
+    enable_checkpoints: bool = False
 ):
     # SAVE_PATH and Tensorboard setup
     SAVE_PATH = Path(f'{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H%M%S")}')

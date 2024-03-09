@@ -1,0 +1,6 @@
+HYPERPARAMETERS
+Val_loss = 0.007820169441401958
+Best Epoch: 999/1000
+Hidden size: 512
+Output size: 1
+Batch size: 64
