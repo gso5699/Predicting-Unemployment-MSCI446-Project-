@@ -72,7 +72,7 @@ def run_rnn(
     hidden_size = 512
     output_size = 1
     learning_rate = 0.001
-    num_epochs = 20
+    num_epochs = 2000
     batch_size = 64
 
     # Create data loaders
@@ -143,17 +143,6 @@ def run_rnn(
     # Get path to best model
     best_model_path = torch.load(os.path.join(save_path, 'best', f'best_model.pth'))
 
-    # Write a txt file defining the hyperparameters
-    text_file_path = os.path.join(save_path, 'best', f'model_info.txt')
-    with open(text_file_path, 'w') as file:
-        file.write(
-        f"HYPERPARAMETERS\n"
-        f"Val_loss = {best_model_path['best_val_loss']}\n"
-        f"Best Epoch: {best_model_path['best_epoch']}/{num_epochs}\n"
-        f"Hidden size: {hidden_size}\n"
-        f"Output size: {output_size}\n"
-        f"Batch size: {batch_size}"
-    )
 
     # Evaluate on the test set
     # Load best model
@@ -174,6 +163,22 @@ def run_rnn(
     print(f"Mean Absolute Error (MAE): {mae:.2f}")
     mape = mean_absolute_percentage_error(y_test, y_pred_test) * 100
     print(f"Mean Absolute Percentage Error (MAPE): {mape:.2f}%")
+
+    # Write a txt file defining the hyperparameters and results on test set
+    text_file_path = os.path.join(save_path, 'best', f'model_info.txt')
+    with open(text_file_path, 'w') as file:
+        file.write(
+        f"HYPERPARAMETERS\n"
+        f"Val_loss = {best_model_path['best_val_loss']}\n"
+        f"Best Epoch: {best_model_path['best_epoch']}/{num_epochs}\n"
+        f"Hidden size: {hidden_size}\n"
+        f"Output size: {output_size}\n"
+        f"Batch size: {batch_size}\n\n"
+        f"ERROR ON TEST SET\n"
+        f"Root Mean Squared Error (RMSE): {rmse}\n"
+        f"Mean Absolute Error (MAE): {mae:.2f}\n"
+        f"Mean Absolute Percentage Error (MAPE): {mape:.2f}%\n"
+    )
 
     # Visualize predictions on test set using matplotlib
     plt.figure(figsize=(10, 6))
