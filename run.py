@@ -3,29 +3,35 @@ from pathlib import Path
 import typer
 
 from run_rnn import *
-from preprocess_data import *
 
 app = typer.Typer()
 @app.command()
 
 def run(
-# Include flags here 
-    save_dir: Path = Path('outputs/'),
-    enable_checkpoints: bool = False
+    save_dir: Path = Path('outputs/'), 
+    enable_checkpoints: bool = True,
+    model_type: str = "RNN"
 ):
+    """
+    Runs a training process
+
+    Parameters:
+    - save_dir (Path): Directory where the model and Tensorboard files will be saved. 
+        Default is 'outputs/'.
+    - enable_checkpoints (bool): Whether to save model checkpoints during training. 
+        Default is True, meaning checkpoints are enabled.
+    - model_type (str): A string indicating the type of model.
+        Default is 'RNN'
+
+    """
     # SAVE_PATH and Tensorboard setup
     SAVE_PATH = Path(f'{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H%M%S")}')
     from torch.utils.tensorboard import SummaryWriter
     writer = SummaryWriter(log_dir=f'{SAVE_PATH}/tensorboard')
     
-    data_clean, data_raw, scaler = get_preprocessed_data()
-    run_rnn(data_clean, data_raw, scaler, SAVE_PATH, writer, enable_checkpoints)
-
-    # Set path_to_saved_model to the best_model generated from the training, if it exists
-    model_path = Path(f'{SAVE_PATH}/best/best_model.pth')
-    if model_path.exists():
-        path_to_saved_model = model_path
-
+    # Run RNN
+    if model_type == 'RNN':
+        run_rnn(SAVE_PATH, writer, enable_checkpoints)
 
 if __name__ == '__main__':
     app()
