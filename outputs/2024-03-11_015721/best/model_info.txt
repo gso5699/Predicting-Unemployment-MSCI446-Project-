@@ -1,0 +1,14 @@
+==================================
+HYPERPARAMETERS FOR SELECTED MODEL
+Epoch: 598/3000
+Hidden Size: 200
+Learning Rate: 0.001
+Batch Size: 64
+Sequence Length: 24
+Training Loss: 0.0008088021422736347
+Validation Loss: 0.003326789475977421
+==================================
+ERROR ON TEST SET
+Root Mean Squared Error (RMSE): 1.3715122284732948
+Mean Absolute Error (MAE): 0.76
+Mean Absolute Percentage Error (MAPE): 13.42%
