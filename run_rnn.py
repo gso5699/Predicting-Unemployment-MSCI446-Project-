@@ -37,6 +37,15 @@ class RNNModel(nn.Module):
 
 # Define Functions
 def get_preprocessed_data():
+    """
+    Load, preprocess, and scale unemployment data.
+
+    Returns:
+    - data_cleaned (numpy.ndarray): Preprocessed and scaled unemployment data.
+    - df (pandas.DataFrame): DataFrame containing unscaled data.
+    - scaler (MinMaxScaler): Scaler used for preprocessing.
+
+    """
     df = pd.read_csv('data/unemployment_data.csv')
     df['Date'] = pd.to_datetime(df['Date'])  
     df.set_index('Date', inplace=True)
@@ -49,6 +58,22 @@ def get_preprocessed_data():
     return(data_cleaned, df, scaler) # df returns unscaled data
 
 def split_data(data, seq_length):
+    """
+    Split the data into sequences for training, validation, and testing.
+
+    Args:
+    - data (numpy.ndarray): Array containing the clean data to split.
+    - seq_length (int): Length of each sequence.
+
+    Returns:
+    - X_train (numpy.ndarray): Training sequences.
+    - X_val (numpy.ndarray): Validation sequences.
+    - X_test (numpy.ndarray): Testing sequences.
+    - y_train (numpy.ndarray): Targets for training sequences.
+    - y_val (numpy.ndarray): Targets for validation sequences.
+    - y_test (numpy.ndarray): Targets for testing sequences.
+    
+    """
     # Create sequences and labels for training
     X, y = [], []
     for i in range(len(data) - seq_length):
@@ -71,9 +96,21 @@ def split_data(data, seq_length):
     return(X_train, X_val, X_test, y_train, y_val, y_test)
 
 def evaluate_model_on_test(path_to_model, save_path, writer, seq_length):
+    """
+    Evaluate a trained model on the validation data and visualize the predictions on test data.
+
+    Args:
+    - path_to_model (str): Path to the saved model file.
+    - save_path (str): Directory where the evaluation results and visualization will be saved.
+    - writer: Tensorboard summary writer for logging.
+    - seq_length (int): Length of each sequence.
+
+    Returns:
+    - None
     
+    """
     data_cleaned, data_unscaled, scaler = get_preprocessed_data()
-    X_train, X_val, X_test, y_train, y_val, y_test = split_data(data=data_cleaned, seq_length=seq_length)
+    X_train, X_val, X_test, _, _, y_test = split_data(data=data_cleaned, seq_length=seq_length)
 
     # Evaluate on the test set
     model_path = torch.load(path_to_model)
@@ -152,6 +189,18 @@ def run_rnn(
     writer, 
     enable_checkpoints
 ):
+    """
+    Train an RNN model on the provided data and evaluate it on the test set.
+
+    Args:
+    - save_path (str): Directory where the trained model and evaluation results will be saved.
+    - writer: Tensorboard summary writer for logging.
+    - enable_checkpoints (bool): Flag indicating whether to save model checkpoints during training.
+
+    Returns:
+    - None
+
+    """
     # Hyperparameters
     input_size = 1
     hidden_size = 180
@@ -161,6 +210,7 @@ def run_rnn(
     batch_size = 64
     seq_length = 28
 
+    # Get processed data
     data_cleaned, _, _ = get_preprocessed_data()
 
     # Split the data
@@ -192,11 +242,11 @@ def run_rnn(
         writer.add_scalar('Training loss per Epoch', train_loss.item(), epoch+1)
 
         # Validation loop
-        model.eval()
         # Make a folder called "best" to save the best model
         if not os.path.exists(os.path.join(save_path, 'best')):
             os.makedirs(os.path.join(save_path, 'best'))
-
+        
+        model.eval()
         with torch.no_grad():
             for inputs, targets in val_loader:
                 outputs = model(inputs)
@@ -223,7 +273,7 @@ def run_rnn(
                 
                 # If enable_checkpoints is enabled, save a model for every 100 epochs in "checkpoint" folder   
                 if enable_checkpoints:
-                    # Save checkpoint
+                    # Save checkpoint for every 100 epochs
                     if (epoch) % 100 == 0:
                         if not os.path.exists(os.path.join(save_path, 'checkpoint')):
                             os.makedirs(os.path.join(save_path, 'checkpoint'))
@@ -244,7 +294,7 @@ def run_rnn(
         # Write to Tensorboard
         writer.add_scalar('Validation loss per Epoch', val_loss.item(), epoch)
 
-        # Display the results of every 10 epochs in the console
+        # Display the error results of every 10 epochs in the console
         if (epoch + 1) % 10 == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Training Loss: {train_loss.item():.4f}, Val Loss: {val_loss.item():.4f}')
 
