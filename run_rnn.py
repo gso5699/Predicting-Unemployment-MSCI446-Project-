@@ -50,7 +50,6 @@ def get_preprocessed_data():
 
 def split_data(data, seq_length):
     # Create sequences and labels for training
-    seq_length = seq_length
     X, y = [], []
     for i in range(len(data) - seq_length):
         X.append(data[i:i + seq_length])
@@ -59,8 +58,8 @@ def split_data(data, seq_length):
     X, y = np.array(X), np.array(y)
 
     # Define the proportions for train, validation, and test sets
-    train_ratio = 0.8
-    val_ratio = 0.1
+    train_ratio = 0.76
+    val_ratio = 0.12
     train_size = int(train_ratio * len(X))
     val_size = int(val_ratio * len(X))
 
@@ -155,12 +154,12 @@ def run_rnn(
 ):
     # Hyperparameters
     input_size = 1
-    hidden_size = 200
+    hidden_size = 180
     output_size = 1
     learning_rate = 0.001
-    num_epochs = 50
+    num_epochs = 3000
     batch_size = 64
-    seq_length = 24
+    seq_length = 28
 
     data_cleaned, _, _ = get_preprocessed_data()
 
@@ -175,7 +174,7 @@ def run_rnn(
 
     # Initialize the model, loss function, and optimizer
     model = RNNModel(input_size, hidden_size, output_size)
-    criterion = nn.MSELoss()
+    criterion = nn.L1Loss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
     # Loop

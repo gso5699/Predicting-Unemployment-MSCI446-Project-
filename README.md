@@ -39,7 +39,7 @@ The code for the RNN was adapted from https://encord.com/blog/time-series-predic
     If the the training was run with ```--enable-checkpoints``` the output folder will also contain the following subfolder:
     - ```checkpoint```: Contains checkpoint files. These checkpoints files are generated every 100 epochs during training
 
-### Deploying a model on test dataset
+## Deploying a model on test dataset
 To deploy a model on the test dataset:
 1) Open the Jupyter notebook ```deploy_model.ipynb``` 
 2) In the first code block, paste the path to the model.
