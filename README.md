@@ -1,5 +1,9 @@
-# Recursive Neural Network
+# Recursive Neural Network for Predicting Unemployment
 The code for the RNN was adapted from https://encord.com/blog/time-series-predictions-with-recurrent-neural-networks/#:~:text=Recurrent%20Neural%20Networks%20(RNNs)%20bring,genuine%20potential%20of%20predictive%20analytics.
+
+## Dataset Description
+The unemployment data used in this RNN was sourced from Statistics Canada (https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037401). 
+It encompasses the total unemployment rates for all population centers and rural areas, presented as a percentage (%) for each month from January 2011 to January 2024.
 
 ## Setup
 1) Create a new environment with the following mandatory packages:
@@ -33,7 +37,7 @@ The code for the RNN was adapted from https://encord.com/blog/time-series-predic
     The output folder will contain the following subfolders:
     - ```tensorboard```: Contains data for visualization in Tensorboard.
     - ```best```: Contains the following:
-        - ```best_model.pth```, the best model generated during the training run
+        - ```best_model.pth```: the best model generated during the training run
         - ```model_info.txt```: Text file with describing the hyperparameters and errors for best_model
 
     If the the training was run with ```--enable-checkpoints``` the output folder will also contain the following subfolder:
