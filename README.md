@@ -52,4 +52,4 @@ Below is a description of each feature:
 
 25. **HPI_total** to **HPI_land**: House Price Index (HPI) for total, house, and land prices.
 
-These features provide a comprehensive view of the economic indicators and variables included in the dataset. 
+These features provide a comprehensive view of the economic indicators and variables included in the dataset.  
