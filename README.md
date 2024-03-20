@@ -27,7 +27,7 @@ It encompasses the total unemployment rates for all population centers and rural
     python run.py
     ```
     or directly run the run.py file. 
-- The run.py file will call the ```run_rnn``` file situated in ```run_rnn.py```
+- The run.py file will call the ```run_rnn``` function situated in ```run_rnn.py``` file
 - The trained model will output in a folder with the following format:
     ```html
     outputs/<model>/<time_stamp>
