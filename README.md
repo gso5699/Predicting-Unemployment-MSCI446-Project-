@@ -85,9 +85,9 @@ It encompasses the total unemployment rates for all population centers and rural
 ## How To Run
 - To run, either type the following in the Console
     ```html
-    python main.py
+    python RNN_Model/main.py
     ```
-    or directly run the main.py file. 
+    or directly run the RNN_model/main.py file. 
 - The main.py file will call the ```run_rnn``` function situated in ```run_rnn.py``` file
 - The trained model will output in a folder with the following format:
     ```html

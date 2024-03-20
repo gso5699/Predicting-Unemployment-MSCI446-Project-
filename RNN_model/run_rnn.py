@@ -97,7 +97,7 @@ def split_data(data, seq_length):
 
 def evaluate_model_on_test(path_to_model, save_path, writer, seq_length):
     """
-    Evaluate a trained model on the validation data and visualize the predictions on test data.
+    Evaluate a trained model on the validation data and visualize the predictions on test data. Saves the prediction visualization as a png under RNN/model/outputs/{timestamp}/results_figure.png.
 
     Args:
     - path_to_model (str): Path to the saved model file.
@@ -155,10 +155,10 @@ def evaluate_model_on_test(path_to_model, save_path, writer, seq_length):
     plt.ylabel('Unemployment (%)')
     plt.title('Unemployment Prediction using RNN (PyTorch)')
     plt.legend()
-    plt.savefig(os.path.join(save_path, 'figure.png'))
+    plt.savefig(os.path.join(save_path, 'results_figure.png'))
 
     # Show image on Tensorboard
-    result_fig = cv2.cvtColor(cv2.imread(os.path.join(save_path, 'figure.png')), cv2.COLOR_BGR2RGB)
+    result_fig = cv2.cvtColor(cv2.imread(os.path.join(save_path, 'results_figure.png')), cv2.COLOR_BGR2RGB)
     writer.add_image('Actual vs Predicted Unemployment on Test Data', result_fig, dataformats='HWC')
 
     # Write a txt file to save the hyperparameters and error calculations
