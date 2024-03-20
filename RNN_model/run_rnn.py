@@ -183,14 +183,14 @@ def evaluate_model_on_test(path_to_model, save_path, writer, seq_length):
         )
     plt.show()
 
-# Main Function
+# Main Function Called by main.py
 def run_rnn(
     save_path, 
     writer, 
     enable_checkpoints
 ):
     """
-    Train an RNN model on the provided data and evaluate it on the test set.
+    Train an RNN model on the provided data and evaluate it on the test set. This function is called in main.py
 
     Args:
     - save_path (str): Directory where the trained model and evaluation results will be saved.

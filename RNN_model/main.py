@@ -8,7 +8,7 @@ app = typer.Typer()
 @app.command()
 
 def run(
-    save_dir: Path = Path('outputs/'), 
+    save_dir: Path = Path('RNN_model/outputs/'), 
     enable_checkpoints: bool = True,
     model_type: str = "RNN"
 ):
