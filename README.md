@@ -88,12 +88,12 @@ It encompasses the total unemployment rates for all population centers and rural
     python RNN_Model/main.py
     ```
     or directly run the RNN_model/main.py file. 
-- The main.py file will call the ```run_rnn``` function situated in ```run_rnn.py``` file
+- The main.py file will call the ```RNN_model/run_rnn``` function situated in ```RNN_model/run_rnn.py``` file
 - The trained model will output in a folder with the following format:
     ```html
-    outputs/<model>/<time_stamp>
+    RNN_model/outputs/<model>/<time_stamp>
 
-    Example: outputs/2023-03-11_093220
+    Example: RNN_model/outputs/2023-03-11_093220
     ```
     The output folder will contain the following subfolders:
     - ```tensorboard```: Contains data for visualization in Tensorboard.
@@ -106,11 +106,11 @@ It encompasses the total unemployment rates for all population centers and rural
 
 ## Deploying a model on test dataset
 To deploy a model on the test dataset:
-1) Open the Jupyter notebook ```deploy_model.ipynb``` 
+1) Open the Jupyter notebook ```RNN_model/deploy_model.ipynb``` 
 2) In the first code block, paste the path to the model.
     Example: 
     ```html
-    model_path = 'outputs/2024-03-11_015721/best/best_model.pth'
+    model_path = 'RNN_model/outputs/2024-03-11_015721/best/best_model.pth'
     ```
     
 
