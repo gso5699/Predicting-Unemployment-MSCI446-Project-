@@ -1,4 +1,6 @@
-# Feature Description
+
+# Lasso Regression Model for Predicting Unemployment
+## Dataset Description
 
 Below is a description of each feature:
 
@@ -52,11 +54,13 @@ Below is a description of each feature:
 
 25. **HPI_total** to **HPI_land**: House Price Index (HPI) for total, house, and land prices.
 
-These features provide a comprehensive view of the economic indicators and variables included in the dataset.  
+These features provide a comprehensive view of the economic indicators and variables included in the dataset. 
 
+[NEED TO PROVIDE LINKS TO THE DATASETS AND INCLUDE REFERENCE SHEET]
 
-# Lasso Regression Model for Predicting Unemployment
-To be written...
+## Description
+TO BE WRITTEN; if the notebook file is already commented nicely, we don't have to include too much here. Just provide a brief outline on process, what we visualized, etc. 
+
 
 
 # Recursive Neural Network Model for Predicting Unemployment
