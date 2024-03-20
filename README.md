@@ -1,7 +1,7 @@
 # Introduction
 For our project, we created several models to predict unemployment. 
 
-The main focus of our project was to implement a regression model such as Lasso Regression or Multiple Regression to predict unemployment. These models used contemporaneous data, meaning they offered insights into how different economic factors influeced unemployment but lacked the capability to predict future unemployment due to the absence of data for the other economic factors at future timestamps.
+The main focus of our project was to implement basic regression models (i.e. Lasso Regression,Multiple Regression) to predict unemployment. These models used contemporaneous data, meaning they offered insights into how different economic factors influeced unemployment but lacked the capability to predict future unemployment due to the absence of data for the other economic factors at future timestamps.
 
 As a secondary approach, we explored the implementation of a Recursive Neural Network (RNN). RNNs are capable of capturing sequential information and patterns over time. In an RNN, the input is a series of observations, and the target is a single response. While implementing an RNN model was not essential for achieving our initial project objectives, it provided additional depth to our learning.
 
