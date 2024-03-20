@@ -114,9 +114,9 @@ It encompasses the total unemployment rates for all population centers and rural
     If the the training was run with ```--enable-checkpoints``` the output folder will also contain the following subfolder:
     - ```checkpoint```: Contains checkpoint files. These checkpoints files are generated every 100 epochs during training
 
-## Deploying a model on test dataset
+## Deploying a RNN model on test dataset
 To deploy a model on the test dataset:
-1) Open the Jupyter notebook ```RNN_model/deploy_model.ipynb``` 
+1) Open the Jupyter notebook ```RNN_model/deploy_rnn_model.ipynb``` 
 2) In the first code block, paste the path to the model.
     Example: 
     ```html
