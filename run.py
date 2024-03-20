@@ -29,7 +29,7 @@ def run(
     from torch.utils.tensorboard import SummaryWriter
     writer = SummaryWriter(log_dir=f'{SAVE_PATH}/tensorboard')
     
-    # Run RNN
+    # Run RNN. The function run_rnn() is defined in the run_rnn.py file
     if model_type == 'RNN':
         run_rnn(SAVE_PATH, writer, enable_checkpoints)
 
