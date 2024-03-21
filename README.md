@@ -26,9 +26,7 @@ Below is a description of each feature:
 | **IMT_import**                   | International Merchandise Trade Import value.                             | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101                                 |
 | **IMT_export**                   | International Merchandise Trade, Export value.                             | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101                                 |
 | **IMT_trade-bal**                | International Merchandise Trade, Trade balance.                            | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101                                 |
-| **ITSI_total** to **ITSB_gov**   | International trade in services across various sectors (total, commercial services, travel, transport, and government). | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401
-https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401
-https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401                                 |
+| **ITSI_total** to **ITSB_gov**   | International trade in services across various sectors (total, commercial services, travel, transport, and government). | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401, https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401, https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401                                 |
 | **HPI_total** to **HPI_land**    | House Price Index (HPI) for total, house, and land prices.               | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501                                 |
 
 
