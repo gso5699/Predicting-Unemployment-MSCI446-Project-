@@ -14,9 +14,6 @@ Below is a description of each feature:
 | Feature                          | Description                                                               | Data Source                                                                                        |
 |----------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | **Date**                         | The year and month of the observation.                                    | -                                                                                                 |
-| **Unemployment_interpolated**    | Interpolated values for unemployment rate. (Not currently used)           | -                                                                                                 |
-| **Bank Interest Rate**           | Interest rate set by the central bank or monetary authority.              | -                                                                                                 |
-| **Change_in_GDP**                | The change in Gross Domestic Product (GDP) compared to the previous period.| https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401                                 |
 | **Unemployment**                 | Unemployment rate.                                                         | https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037401                                  |
 | **CPI_all-items to CPI_no-food-and-energy** | Consumer Price Index for various items.                               | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601   |
 | **GDP**                          | Gross Domestic Product across all industries.                              | https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401                                 |
