@@ -11,35 +11,33 @@ As a secondary approach, we explored the implementation of a Recursive Neural Ne
 ## Dataset Description
 
 Below is a description of each feature:
+| Feature                          | Description                                                               | Data Source                                                                                        |
+|----------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Date**                         | The year and month of the observation.                                    | -                                                                                                 |
+| **Unemployment**                 | Unemployment rate.                                                         | [Unemployment Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037401)     |
+| **CPI_all-items**                | Consumer Price Index (CPI) for all items.                                 | [CPI All Items Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)   |
+| **CPI_food**                     | Consumer Price Index for food items.                                       | [CPI Food Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)        |
+| **CPI_shelter**                  | Consumer Price Index for shelter-related expenses.                         | [CPI Shelter Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)     |
+| **CPI_household_op**             | Consumer Price Index for household operations.                             | [CPI Household Operations Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601) |
+| **CPI_clothing**                 | Consumer Price Index for clothing.                                         | [CPI Clothing Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)     |
+| **CPI_transportation**           | Consumer Price Index for transportation.                                   | [CPI Transportation Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601) |
+| **CPI_health**                   | Consumer Price Index for health-related expenses.                          | [CPI Health Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)      |
+| **CPI_rec**                      | Consumer Price Index for recreation, education, and reading.               | [CPI Recreation, Education, and Reading Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601) |
+| **CPI_alcohol**                  | CPI for alcoholic beverages, tobacco products, and recreational cannabis. | [CPI Alcohol Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)     |
+| **CPI_no-food**                  | CPI excluding food items.                                                  | [CPI No Food Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)     |
+| **CPI_no-food-and-energy**       | CPI excluding food and energy items.                                       | [CPI No Food and Energy Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601) |
+| **GDP**                          | Gross Domestic Product across all industries.                              | [GDP Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401)             |
+| **FEX_AUS** to **FEX_USA**       | Foreign exchange rates against various currencies.                         | [Foreign Exchange Rates Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310016301) |
+| **FEX_CAD**                      | Foreign exchange rate against the Canadian Dollar.                         | [Foreign Exchange Rate CAD Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310016301) |
+| **AWE_industrial-aggregate** to **AWE_public-admin** | Average Weekly Earnings (AWE) across different industries and sectors.  | [Average Weekly Earnings Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410020301) |
+| **IMT_import**                   | International Merchandise Trade Import value.                             | [Import Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)         |
+| **IMT_export**                   | International Merchandise Trade, Export value.                             | [Export Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)         |
+| **IMT_trade-bal**                | International Merchandise Trade, Trade balance.                            | [Trade Balance Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)  |
+| **ITSI_total** to **ITSB_gov**   | International trade in services across various sectors (total, commercial services, travel, transport, and government). | [Imports Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401), [Exports Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401), [Balances Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401) |
+| **HPI_total** to **HPI_land**    | House Price Index (HPI) for total, house, and land prices.               | [House Price Index Data Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501) |
 
-| Feature                   | Description                                                               | Data Source                                                                                      |
-|---------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Date**                  | The year and month of the observation.                                    | -                                                                                               |
-| **Unemployment_interpolated** | Interpolated values for unemployment rate. (Not currently used)         | -                                                                                               |
-| **Bank Interest Rate**    | Interest rate set by the central bank or monetary authority.              | -                                                                                               |
-| **Change_in_GDP**         | The change in Gross Domestic Product (GDP) compared to the previous period. | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401)                     |
-| **Unemployment**          | Unemployment rate.                                                         |[Source] (https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037401)                     |
-| **CPI_all-items**         | Consumer Price Index (CPI) for all items.                                 | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_food**              | Consumer Price Index for food items.                                       | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_shelter**           | Consumer Price Index for shelter-related expenses.                         | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_household_op**      | Consumer Price Index for household operations.                             | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_clothing**          | Consumer Price Index for clothing.                                         | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_transportation**    | Consumer Price Index for transportation.                                   | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_health**            | Consumer Price Index for health-related expenses.                          | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_rec**               | Consumer Price Index for recreation, education, and reading.               | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_alcohol**           | CPI for alcoholic beverages, tobacco products, and recreational cannabis. | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_no-food**           | CPI excluding food items.                                                  | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **CPI_no-food-and-energy**| CPI excluding food and energy items.                                       | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601)                     |
-| **GDP**                   | Gross Domestic Product across all industries.                              | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401)                     |
-| **FEX_AUS** to **FEX_USA**| Foreign exchange rates against various currencies.                         | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310016301)                     |
-| **FEX_CAD**               | Foreign exchange rate against the Canadian Dollar.                         | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310016301)                     |
-| **AWE_industrial-aggregate** to **AWE_public-admin** | Average Weekly Earnings (AWE) across different industries and sectors.  | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410020301)                     |
-| **IMT_import**            | International Merchandise Trade Import value.                             | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)                     |
-| **IMT_export**            | International Merchandise Trade, Export value.                             | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)                     |
-| **IMT_trade-bal**         | International Merchandise Trade, Trade balance.                            | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)                     |
-| **ITSI_total** to **ITSB_gov**| International trade in services across various sectors (total, commercial services, travel, transport, and government). | [Imports](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401), [Exports](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401), [Balances](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210014401) |
-| **HPI_total** to **HPI_land** | House Price Index (HPI) for total, house, and land prices.               | [Source](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501)                     |
 
+These features provide a comprehensive view of the economic indicators and variables included in the dataset. 
 
 ## Description
 TO BE WRITTEN; if the notebook file is already commented nicely, we don't have to include too much here. Just provide a brief outline on process, what we visualized, etc. 
