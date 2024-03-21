@@ -5,6 +5,8 @@ The main focus of our project was to implement basic regression models (i.e. Las
 
 As a secondary approach, we explored the implementation of a Recursive Neural Network (RNN). RNNs are capable of capturing sequential information and patterns over time. In an RNN, the input is a series of observations, and the target is a single response. While implementing an RNN model was not essential for achieving our initial project objectives, it provided additional depth to our learning.
 
+---
+
 # Regression Models for Predicting Unemployment
 ## Dataset Description
 
