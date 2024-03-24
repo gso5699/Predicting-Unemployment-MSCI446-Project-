@@ -30,8 +30,23 @@ Below is a description of each feature:
 These features provide a comprehensive view of the economic indicators and variables included in the dataset. 
 
 ## Description
-TO BE WRITTEN; if the notebook file is already commented nicely, we don't have to include too much here. Just provide a brief outline on process, what we visualized, etc. 
+Our goal was to predict unemployment rates using out regression models. Our dataset containing many economic indicators over time, was preprocessed for out analysis. This included data cleaning, feature selection and splitting the data into sets.
 
+We applied Linear Regression, Polynomial Regression in addition to Lasso and Ridge regularization to model unemployment. Hyperparamete tuning was additionally attempted for optimizing model performance. Many evaluation metrics including MSE, RMSE, MAE, MAPE and R-Squared were all used to assess model's accuracy. This project shows the use of statistical models for understanding unemployment rates.
+
+
+# How To Run Regression Models for Predicting Unemployment
+## Install Required Packages
+Make sure that the required Python packages are installed by running the following command in your terminal/command prompt:
+
+```pip install pandas numpy matplotlib seaborn scikit-learn mlxtend```
+
+## Run the notebook
+Locate the project file Regression_models.ipynb
+
+Open Regression_models.ipynb in Jupyter Notebook/JupyterLab.
+
+Runn all the cells. Then you will see the displayed results.
 ---
 
 # Recursive Neural Network Model for Predicting Unemployment
@@ -87,18 +102,5 @@ To deploy a model on the test dataset:
     ```html
     model_path = 'RNN_model/outputs/2024-03-11_015721/best/best_model.pth'
     ```
-
-# Regression Models for Predicting Unemployment
-## Install Required Packages
-Make sure that the required Python packages are installed by running the following command in your terminal/command prompt:
-
-```pip install pandas numpy matplotlib seaborn scikit-learn mlxtend```
-
-## Run the notebook
-Locate the project file Regression_models.ipynb
-
-Open Regression_models.ipynb in Jupyter Notebook/JupyterLab.
-
-Runn all the cells. Then you will see the displayed results.
     
 
