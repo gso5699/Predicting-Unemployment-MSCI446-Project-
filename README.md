@@ -46,7 +46,8 @@ Locate the project file Regression_models.ipynb
 
 Open Regression_models.ipynb in Jupyter Notebook/JupyterLab.
 
-Runn all the cells. Then you will see the displayed results.
+Run all the cells. Then you will see the displayed results.
+
 ---
 
 # Recursive Neural Network Model for Predicting Unemployment
