@@ -91,11 +91,14 @@ To deploy a model on the test dataset:
 # Regression Models for Predicting Unemployment
 ## Install Required Packages
 Make sure that the required Python packages are installed by running the following command in your terminal/command prompt:
+
 ```pip install pandas numpy matplotlib seaborn scikit-learn mlxtend```
 
 ## Run the notebook
 Locate the project file Regression_models.ipynb
+
 Open Regression_models.ipynb in Jupyter Notebook/JupyterLab.
+
 Runn all the cells. Then you will see the displayed results.
     
 
